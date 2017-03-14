@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="myApp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Test System</title>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/angular.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<style>
+@media (min-width:1000px){
+	.marpad{
+		margin:15px;
+		padding:15px;	
+	}
+	.mar{
+		margin:15px;
+		}
+		
+	.sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+	.pagectrl{
+		margin:100px;	
+	}
+	.downbox{
+		text-align:center;
+		display:inline-block;
+		width: 33%;	
+		
+	}
+}
+
+@media (min-width:768px){
+	.marpad{
+		margin:10px;
+		padding:10px;	
+	}
+	.mar{
+		margin:10px;
+		}
+		
+	.sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+	.pagectrl{
+		margin:30px;	
+	}
+	.downbox{
+		text-align:center;
+		display:inline-block;
+		width: auto;	
+		
+	}
+}
+@media (max-width:768px){
+	body{
+		max-width:400px;
+	}
+	
+	.middle{
+		text-align:center;
+	}
+	.marpad{
+		margin:6px;
+		padding:6px;	
+	}
+	.mar{
+		margin:6px;
+		}
+		
+	.sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+
+    }
+	.questions{
+		font-size:12px;
+		}
+		.list{
+			font-size:18px;
+		}
+	.pagectrl{
+		margin:5px;
+		font-size:8px;
+	}
+	.downbox{
+		text-align:center;
+		display:inline-block;
+		width: auto;
+		
+	}
+}
+
+	.content{
+			
+			height:89vh;
+			min-height:400px;
+		}
+	.btns{
+		margin-top:8%;
+	}
+	
+	
+  .navbar, .paperdrop {
+     
+     
+      border-radius: 3;
+     
+  }
+.btn{
+	 border-radius: 3;
+}
+</style>
+</head>
+
+<body ng-controller="myCtrl as ctrl">
+<nav class="navbar  navbar-default " style="margin-bottom:0;">
+	<a class="navbar-brand" href="./preface.html">AEOT</a>
+    <div class="container-fluid">
+    	
+    	<ul class="navbar-nav nav navbar-collapse">
+    		<li class="dropdown paperdrop"><a  class="dropdown-toggle" data-toggle="dropdown" href="#">Papers<span class="caret"></span></a>
+            	<ul class="dropdown-menu">
+					<li ><a href="#" ng-click="ctrl.select1()">Paper1</a></li>
+     				<li ><a href="#" ng-click="ctrl.select2()">Paper2</a></li>
+					
+				</ul>
+            
+            </li>
+           
+    	</ul>
+        
+    </div>
+</nav>
+
+
+
+<div class="container-fluid   content" >
+	
+	<div class="row content">
+		
+       
+        <div class="col-md-12 col-xs-12 text-left"> 
+      		<h1>Question<span id="questionNum" ng-bind="ctrl.pageNum" ></span></h1> 
+            <div class="dropdown" >
+ 			<button class="btn btn-default dropdown-toggle" type = "button" data-toggle="dropdown">Question List<span class="caret"></span></button>
+            <ul	 class="dropdown-menu" ng-repeat="ques in ctrl.questions">
+            	<li><a href="#" ng-repeat="ques in ctrl.questions" ng-click="ctrl.pageNum = ques.quesNum">Question {{ques.quesNum}}</a></li>
+                
+            </ul>
+			<button class="btn btn-danger pull-right hidden" type="button" ng-click="ctrl.submitAns()" id="sbmbtn">Submit</button>
+            </div><br />
+
+      		<p class="mar" ng-bind = "ctrl.questions[ctrl.pageNum-1].quesDesc">Question Description Here</p>
+      		<hr>
+      		<h3>Answer</h3>
+      		<form id="answer" role="form">
+            	<div class="radio">
+            	<label ><input type="radio" name="opt" ng-checked="ctrl.submit[ctrl.pageNum-1] && ctrl.flag[ctrl.pageNum-1]" ng-click="ctrl.check1();" id="opt1"/>&nbsp; <span ng-bind="ctrl.questions[ctrl.pageNum-1].option1"></span></label><br />
+                </div>
+                <div class="radio">
+                <label ><input type="radio"   name="opt" ng-checked="!ctrl.submit[ctrl.pageNum-1] && ctrl.flag[ctrl.pageNum-1] " ng-click="ctrl.check2();" id="opt2"/>&nbsp; <span ng-bind="ctrl.questions[ctrl.pageNum-1].option2" ></span></label>
+                </div>
+            </form>
+            <div style="text-align:center;">
+            	
+            	<div class="row">
+            		<div class="downbox pull-left">
+           		    	<button class="btn btn-primary marpad " id="last" ng-click="ctrl.lastPage()" ng-disabled="ctrl.pageNum == 1">Last Page</button>
+           	    	</div>
+          	    	<div class="downbox">
+            	    	<label ><span ng-bind="ctrl.pageNum"></span>/<span ng-bind="ctrl.questions[0].totalPage"></span></label><br />
+						<label id="subResult" class="hidden">Points:<span ng-bind="ctrl.points"></span>/<span ng-bind="ctrl.questions[0].totalPage"></span></label>
+                	</div>
+                	<div class="downbox pull-right">
+                    	<button class="btn btn-primary marpad " id="last" ng-click="ctrl.nextPage()" ng-disabled="ctrl.pageNum == ctrl.questions[0].totalPage">Next Page</button>
+                	</div>
+            	</div>
+                
+            </div>
+            <div style="text-align:left;" >
+            <hr />
+                	<button data-toggle="collapse" data-target="#myAnswer" class="btn btn-danger " ng-click="ctrl.showAns()">Show All Answer</button>
+                    <div id="myAnswer"  class="marpad collapse" style="text-align:left;">
+                    	<h2 ng-bind="ctrl.display">Solution:</h2>
+                        <div ng-bind="ctrl.questions[ctrl.pageNum-1].answer"></div>
+                    </div>
+                </div>
+            
+    	</div>
+		
+        
+	</div>
+    
+</div>
+
+<footer class="container text-center ">
+<p>Copyright Clexma all right reserved</p>
+</footer>
+
+
+
+
+<script>
+	"use strict";
+		//angular definition and bind
+		$("#myAnswer").hide(0.5);
+		 var app = angular.module("myApp",[]);
+		 app.controller('myCtrl',['$http',
+			function($http){
+					
+					var self = this;
+					var i;
+					self.pageNum = 1;
+					self.question = [];
+					//change paper handle
+					self.submit = [];
+					self.select1 = function(){
+						
+						$http.get("test1.txt")
+						.then(function (response){ 
+							
+							self.questions = response.data;
+							for(i=0;i<self.questions[0].totalPage;i++)
+							{
+								self.submit[i] = 1;
+								self.flag[i] = 0;
+							}
+						});
+						$("#subResult").addClass("hidden");
+						
+					};
+					
+					
+						
+					
+					self.select2 = function(){
+						
+						$http.get("test2.txt")
+						.then(function (response){ 
+							
+							self.questions = response.data;
+							for(i=0;i<self.questions[0].totalPage;i++)
+							{
+								self.submit[i] = 1;
+								self.flag[i] = 0;
+							}
+						});
+						$("#subResult").addClass("hidden");
+						
+					};
+					
+					self.questions = [
+					{
+						"totalPage" : 13,
+						"quesNum" : 1,
+						"quesDesc" : "During the 1970's and 1980's, it became increasingly ____ that companies in the West were uncompetitive.",
+						"option1" : "evident",
+						"option2": "visible",
+						"answer" : "evident",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 2,
+						"quesDesc" : "The United Kingdom ____ more books than any other country.",
+						"option1" : "makes ",
+						"option2" : "publishes ",
+						"answer" : "publishes",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 3,
+						"quesDesc" : "There has been a major road accident, ____ 23 cars and 16 lorries.",
+						"option1" : "involving  ",
+						"option2" : "including ",
+						"answer" : "involving",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 4,
+						"quesDesc" : "On the basis of the latest survey, we know that most people have a very ____ view of politicians and their parties.",
+						"option1" : "negative  ",
+						"option2" : "bleak",
+						"answer" : "negative",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 5,
+						"quesDesc" : "In many parts of the world, people are becoming more worried about the danger of pollution and its effect on the ____.",
+						"option1" : "environment   ",
+						"option2" : "ecology",
+						"answer" : "environment",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 6,
+						"quesDesc" : "Education experts from France travelled to Japan to ____ the secondary school system there.",
+						"option1" : "evaluate  ",
+						"option2" : "judge",
+						"answer" : "evaluate",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 7,
+						"quesDesc" : "Although it is not very big, the library has an excellent ____ of books, journals and other resources for study.",
+						"option1" : "range",
+						"option2" : "variety",
+						"answer" : "range",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 8,
+						"quesDesc" : "Increasingly, the design of buildings is being ____ modified to allow easier access for disabled people.",
+						"option1" : "adjusted",
+						"option2" : "modified",
+						"answer" : "modified",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 9,
+						"quesDesc" : "The lack of extra student accommodation ____ the expansion in student numbers which the university was planning.",
+						"option1" : "restricted",
+						"option2" : "narrowed",
+						"answer" : "restricted",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 10,
+						"quesDesc" : "Many students ____ a great deal of enjoyment and satisfaction from their time at university.",
+						"option1" : "acquire",
+						"option2" : "derive",
+						"answer" : "derive",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 11,
+						"quesDesc" : "Although the world is getting warmer slowly, the increase in temperature ____ from country to country.",
+						"option1" : "varies",
+						"option2" : "fluctuates",
+						"answer" : "varies",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 12,
+						"quesDesc" : "Following the bank raid, the police ____ the robbers but were unable to catch them.",
+						"option1" : "followed",
+						"option2" : "pursued",
+						"answer" : "pursued",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 13,
+						"quesDesc" : "Assessment on this course ____  coursework (30%) and examinations (70%).",
+						"option1" : "includes",
+						"option2" : "consists of",
+						"answer" : "consists of",
+						"right" : 0
+					}
+					];
+					
+					//answer initialize
+					for(i=0;i<self.questions[0].totalPage;i++)
+					{
+						self.submit[i] = 1;
+					}
+					//turn page event handle
+					self.nextPage = function(){
+							self.pageNum+=1;
+							
+							$("#myAnswer").addClass('hidden');
+							$("#myAnswer").removeClass('hidden');
+							if(self.pageNum == self.questions[0].totalPage)
+							{
+								$("#sbmbtn").removeClass("hidden");
+							}
+							else 
+								$("#sbmbtn").addClass("hidden");
+							$scope.$apply();
+						};
+					
+					self.lastPage = function(){
+							
+							self.pageNum-=1;
+							
+							$("#myAnswer").addClass('hidden');
+							$("#myAnswer").removeClass('hidden');
+							$scope.$apply();
+						};
+					self.flag = [];
+					//choose answer event handle 
+					self.check1 = function(){
+						self.flag[self.pageNum-1] = 1;
+						self.submit[self.pageNum-1] = 1;
+					};
+					self.check2 = function(){
+						self.flag[self.pageNum-1] = 1;
+						self.submit[self.pageNum-1] = 0;
+					};
+					
+					//submit event handle
+					self.points = 0;
+					self.submitAns = function(){
+						self.points = 0;
+						for(var index = 0;index < self.questions[0].totalPage;index++)
+						{
+							
+							if(self.submit[index] == self.questions[index].right && self.flag[index])
+							{
+								self.points+=1;
+							}
+						}
+						$("#subResult").removeClass("hidden");
+						
+					};
+					
+					
+				} 
+		 
+		 ]);
+		
+</script>
+</body>
+</html>

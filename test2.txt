@@ -1,0 +1,128 @@
+[
+					{
+						"totalPage" : 14,
+						"quesNum" : 1,
+						"quesDesc" : "A new moon ____ every 28 days",
+						"option1" : "occurs",
+						"option2": "takes place",
+						"answer" : "occurs",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 2,
+						"quesDesc" : "Students should not be ____ but should try instead to contribute as much as possible to discussions in seminar groups.",
+						"option1" : "inert",
+						"option2" : "passive",
+						"answer" : "passive",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 3,
+						"quesDesc" : "On the first day, the course director and the subject tutor explained their ____ roles to the new students",
+						"option1" : "respective",
+						"option2" : "single",
+						"answer" : "respective",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 4,
+						"quesDesc" : "It is now possible to ____ a link between using mobile phones and contracting some forms of cancer",
+						"option1" : "infer",
+						"option2" : "imply",
+						"answer" : "infer",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 5,
+						"quesDesc" : "The fact that population growth is still ____ is one of the most important problems we face.",
+						"option1" : "accelerating",
+						"option2" : "catching up",
+						"answer" : "accelerating",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 6,
+						"quesDesc" : "Most universities need to earn money from private sources, but the ____ part of their funding still comes from the government.",
+						"option1" : "important",
+						"option2" : "major",
+						"answer" : "major",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 7,
+						"quesDesc" : "Expenditure on weapons such as guns, tanks and aeroplanes consumes a large ____ of a country's wealth",
+						"option1" : "piece",
+						"option2" : "portion",
+						"answer" : "portion",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 8,
+						"quesDesc" : "Because foreign exchange rates ebb and  / , it is not always possible for exporters to know how much money they will receive from sales.",
+						"option1" : "flow",
+						"option2" : "fluctuate",
+						"answer" : "fluctuate",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 9,
+						"quesDesc" : "Member countries ____ money to the United Nations to pay for the running of the organization.",
+						"option1" : "award",
+						"option2" : "contribute",
+						"answer" : "contribute",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 10,
+						"quesDesc" : "The main ____ of Greenpeace is on problems concerning pollution",
+						"option1" : "concentration",
+						"option2" : "focus",
+						"answer" : "focus",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 11,
+						"quesDesc" : "Although their ____ was often very good, the quality of many British cars tended to be poor.",
+						"option1" : "plan",
+						"option2" : "design",
+						"answer" : "design",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 12,
+						"quesDesc" : "Although it is very expensive, it is possible to ____ other forms of carbon into diamonds.",
+						"option1" : "convert",
+						"option2" : "exchange",
+						"answer" : "convert",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 13,
+						"quesDesc" : "Prehistoric man could not ____ why the moon appears to grow bigger and then smaller each month.",
+						"option1" : "think",
+						"option2" : "comprehend",
+						"answer" : "comprehend",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 14,
+						"quesNum" : 14,
+						"quesDesc" : "In some situations, a law court can ____ the police to enter a house without the owner's permission.",
+						"option1" : "authorise",
+						"option2" : "let",
+						"answer" : "authorise",
+						"right" : 1
+					}
+					]

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>userInterface</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<script src="plugins/ace-builds-master/src-noconflict/ace.js" type="text/javascript"></script>
+<style>
+	.marpad{
+		margin:10px;
+		padding:5px;
+	}
+	.mar{
+		margin:10px;
+	}
+	.pad{
+		padding:10px;
+	}
+	.largefont{
+		font-size:24px;
+	}
+	.midiumfont{
+		font-size:18px;
+	}
+	.state{
+		fill:white;
+		stroke:black;
+		stroke-width:2;
+	}
+	.transition{
+		stroke:black;
+		stroke-width:2;
+	}
+	.label{
+		font:"Times New Roman", Times, serif;
+		font-size:10px;
+	}
+</style>
+
+</head>
+
+
+<body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+
+
+
+<!-- The Navigation Bar with btns and dropdowns -->
+	
+	<nav class="navbar navbar-inverse">
+    	<div class="container-fluid">
+       	  <a class="navbar-brand" href="#">Website Name</a>
+            <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="pull-right"><a href="#">btn</a></li>
+            <li><a href="#">btn</a></li>
+            <li><a href="#">btn</a></li>
+            </ul>
+            
+            
+      </div>
+</nav>
+<!-- Tab to choose mode-->
+<div class="container-fluid text-center">
+
+       <ul class="nav nav-tabs">
+            <li class=" active" id="IM" onClick="IMActive()"><a href="#">Interactive Mode</a></li>
+            <li id="AM" onClick="AMActive();"><a href="#">Automative Mode</a></li>
+       </ul>
+     
+   
+</div>
+<!--interactive mode-->
+<div id="interactive">
+	<div class="container">
+		<h2 class="marpad">Interactive Learning</h2>
+		<p class="marpad">Input the alphabet and take the role of teacher in learning.</p>
+	</div>
+	<div class="container">
+        <h3>Infromation for interactive learning :</h3>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Alphabet</label>
+                    <div class="col-md-10">
+                        
+						<input class="form-control" id="focusedInput" type="text" >
+						<button class="btn-block btn btn-primary" style="margin-top:10px;">Submit</button>
+                    </div>
+					
+                </div>
+			<h3>Interaction :</h3>
+			<fieldset disabled>
+				<div class="form-group">
+					<label for="MemQuery" class="col-md-2 control-label">MembershipQuery</label>
+					<div class="col-md-10">
+						<input type="text" id="MenQuery" class="form-control" placeholder="MQ">
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-group">
+				<label class="col-md-2 control-label">Run Accepted?</label>
+				<div class="col-md-5">
+					<button class="mar btn-block btn btn-primary" id="MQButtonY" >Yes</button>
+				</div>
+				<div class="col-md-5">
+					<button class="mar btn-block btn btn-primary" id="MQButtonN" >No</button>
+				</div>
+				
+			</div>
+			<fieldset disabled>
+				<div class="form-group">
+					<label for="EQuery" class="col-md-2 control-label">EquivalenceQuery</label>
+					<div class="col-md-10">
+						<textarea type="text" id="EQuery" class="form-control" placeholder="EQ" rows="10"></textarea>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-group">
+				<label class="col-md-2 control-label">Correct Result?</label>
+				<div class="col-md-5">
+					<button class="mar btn-block btn btn-primary" id="EQButtonY" >Yes</button>
+				</div>
+				<div class="col-md-5">
+					<button class="mar btn-block btn btn-primary" id="EQButtonN" >No</button>
+				</div>
+				
+			</div>
+			
+  </form>
+</div>
+
+    
+</div>
+
+<!--automative mode-->
+<div id="automative" hidden="yes">
+	<div class="marpad">
+		<h2 class="marpad">Automative Learning</h2>
+		<p class="marpad">Input your automata in BA format and the learning process will be executed automatively. </p>
+	</div>
+	<div class="row">
+    	<div class="col-md-6">
+        	<div class="marpad" id="out"> 
+            	<label class="pad  midiumfont">Automata Input :</label>
+				<button class="btn pull-right btn-primary" style="width:30%;margin-bottom">Run</button>
+					<pre id="editor" class="mar" style=" height:600px; "></pre>
+                    
+					
+    			
+            </div>
+        </div> 
+        <div class="col-md-6">
+        	<div class="marpad">
+			
+            	<label class="pad midiumfont">Result :</label>
+                <div>
+					<pre id="result" class="mar" style=" height:600px; ">result code</pre>
+                </div>
+            </div>
+        </div>
+    </div>	
+</div>
+<script src="automata1.js"></script>
+<script>
+"use strict";
+	
+	function IMActive(){
+		document.getElementById('IM').className='active';
+		document.getElementById('AM').className='';
+		document.getElementById('automative').hidden = "hidden";
+		document.getElementById('interactive').hidden = "";
+	}
+	function AMActive(){
+		document.getElementById('AM').className='active';
+		document.getElementById('IM').className='';
+		document.getElementById('automative').hidden = "";
+		document.getElementById('interactive').hidden = "hidden";
+	}
+	//ace editor
+	var editor = ace.edit("editor");
+   	editor.setTheme("ace/theme/twilight");
+	
+</script>
+<script src="plugins/ace-builds-master/src-noconflict/ace.js" type="text/javascript"></script>
+<script src="js/d3.js"></script>
+</body>
+
+</html>

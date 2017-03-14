@@ -1,0 +1,119 @@
+﻿[
+					{
+						"totalPage" : 13,
+						"quesNum" : 1,
+						"quesDesc" : "During the 1970's and 1980's, it became increasingly ____ that companies in the West were uncompetitive.",
+						"option1" : "evident",
+						"option2": "visible",
+						"answer" : "evident",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 2,
+						"quesDesc" : "The United Kingdom ____ more books than any other country.",
+						"option1" : "makes ",
+						"option2" : "publishes ",
+						"answer" : "publishes",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 3,
+						"quesDesc" : "There has been a major road accident, ____ 23 cars and 16 lorries.",
+						"option1" : "involving  ",
+						"option2" : "including ",
+						"answer" : "involving",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 4,
+						"quesDesc" : "On the basis of the latest survey, we know that most people have a very ____ view of politicians and their parties.",
+						"option1" : "negative  ",
+						"option2" : "bleak",
+						"answer" : "negative",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 5,
+						"quesDesc" : "In many parts of the world, people are becoming more worried about the danger of pollution and its effect on the ____.",
+						"option1" : "environment   ",
+						"option2" : "ecology",
+						"answer" : "environment",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 6,
+						"quesDesc" : "Education experts from France travelled to Japan to ____ the secondary school system there.",
+						"option1" : "evaluate  ",
+						"option2" : "judge",
+						"answer" : "evaluate",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 7,
+						"quesDesc" : "Although it is not very big, the library has an excellent ____ of books, journals and other resources for study.",
+						"option1" : "range",
+						"option2" : "variety",
+						"answer" : "range",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 8,
+						"quesDesc" : "Increasingly, the design of buildings is being ____ modified to allow easier access for disabled people.",
+						"option1" : "adjusted",
+						"option2" : "modified",
+						"answer" : "modified",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 9,
+						"quesDesc" : "The lack of extra student accommodation ____ the expansion in student numbers which the university was planning.",
+						"option1" : "restricted",
+						"option2" : "narrowed",
+						"answer" : "restricted",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 10,
+						"quesDesc" : "Many students ____ a great deal of enjoyment and satisfaction from their time at university.",
+						"option1" : "acquire",
+						"option2" : "derive",
+						"answer" : "derive",
+						"right" : 0
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 11,
+						"quesDesc" : "Although the world is getting warmer slowly, the increase in temperature ____ from country to country.",
+						"option1" : "varies",
+						"option2" : "fluctuates",
+						"answer" : "varies",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 12,
+						"quesDesc" : "Following the bank raid, the police ____ the robbers but were unable to catch them.",
+						"option1" : "followed",
+						"option2" : "pursued",
+						"answer" : "pursued",
+						"right" : 1
+					}
+					,{
+						"totalPage" : 13,
+						"quesNum" : 13,
+						"quesDesc" : "Assessment on this course ____  coursework (30%) and examinations (70%).",
+						"option1" : "includes",
+						"option2" : "consists of",
+						"answer" : "consists of",
+						"right" : 0
+					}
+					]
